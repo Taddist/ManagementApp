@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Valider Demande{% endblock %}
+{% block content %}
+
+      <center>
+     
+
+        <h3> la demande valide</h3>
+        
+        <form method="POST" class="post-form">{% csrf_token %}
+                        {{ form.as_p }}
+                       <button type="submit" class="save btn btn-success">Valider</button>
+           </form>
+          
+      </center>
+	
+
+</div>
+{% endblock %}

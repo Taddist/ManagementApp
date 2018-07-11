@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Supprimer demande{% endblock %}
+{% block content %}
+
+      <center>
+          
+
+        {% if envoi %}
+              <div class="col-md-4 .col-md-offset-4"></div>
+              <center><div class="alert alert-success col-md-4 .col-md-offset-4"><a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a><strong>La demande a bien été supprimée!</strong></div><center>
+              <br><br>
+        {% endif %}
+        
+      </center>
+  
+
+</div>
+{% endblock %}

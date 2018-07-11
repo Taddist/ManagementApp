@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Demande{% endblock %}
+{% block content %}
+
+      <center>
+     
+
+        <h3> Etes vous certain de vouloir valider la demande ?</h3>
+        <br><br>
+         <div class="alert alert-success col-md-4 .col-md-offset-4"> <a href="/confirmerdocument/{{document.id}}/" style="color:black;">Oui</a> </div>
+         <div class="col-md-4 .col-md-offset-4"></div>
+         <div class="alert alert-danger col-md-4 .col-md-offset-4"><a href="/supprimerdocument/{{document.id}}/" style="color:black;">Non</a> </div>
+
+      
+
+
+          
+      </center>
+	
+
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Consulter Synthese {% endblock %}
+{% block content %}
+
+
+      <div class="table-responsive">
+             <table class="table table-striped">
+		<tr>
+  			<td >Date du jour</td>
+  			<td >Heure d'entrée</td>
+  			<td >Pause déjeuner</td>
+  			<td >Heure de sortie</td>
+		</tr>
+		{% for synthese in syn %}
+			<tr>
+  				<td > {{ synthese.jour }}</td>
+  				<td >{{ synthese.entree }}</td>
+  				<td>{{ synthese.pause }}</td>
+  				<td >{{ synthese.sortie }}</td>
+			</tr>
+		{% endfor %}
+	    </table>
+       </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Consulter Synthese {% endblock %}
+{% block content %}
+
+     <ul>
+		{% for u in collabo %}
+                        <center> <li><a href="/collaborateur/{{u.user_id }}/">{{ u.user.username }}</a></li></center>
+			
+		{% endfor %}
+	</ul>
+
+
+</div>
+{% endblock %}

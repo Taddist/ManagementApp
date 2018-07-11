@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Consulter Synthese {% endblock %}
+{% block content %}
+
+     
+      <div class="col-sm-6 col-md-6" >
+                <h3> Informations </h3>
+		<h4>Matricule&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{collabo.matricule}}</h4>
+		<h4>CIN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{collabo.cin}} </h4>
+		<h4>Nom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{collabo.user.last_name}}</h4>
+		<h4>Prénom&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{collabo.user.first_name}}</h4>
+		<h4>Age&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: {{collabo.age}} </h4>
+		<h4>Situation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{situation}} </h4>
+		<h4>Nombre d'enfant&nbsp;&nbsp;:{{collabo.enfant}} </h4>
+		<h4>Date d'embauche&nbsp;&nbsp;: {{collabo.date_embauche}} </h4>
+	        <h4>Type contrat&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:{{con.typecontrat}} </h4>
+                <br>
+      </div>
+
+ 
+      <div class="col-sm-6 col-md-12">
+                 <div class="table-responsive">
+                      <table class="table table-striped">
+                                      <tr>
+  						<td >Date du jour</td>
+  						<td >Heure d'entrée</td>
+  						<td >Pause déjeuner</td>
+  						<td >Heure de sortie</td>
+				      </tr>
+				      {% for synthese in syn %}
+						<tr>
+  							<td > {{ synthese.jour }}</td>
+  							<td >{{ synthese.entree }}</td>
+  							<td>{{ synthese.pause }}</td>
+  							<td >{{ synthese.sortie }}</td>
+						</tr>
+				      {% endfor %}
+	    	      </table>
+                      <br>	
+                  </div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+		<div class="table-responsive">
+             		<table class="table table-striped">
+                                   <tr>
+  					<td >Nombre de jour </td>
+  					<td >date de debut conge</td>
+  					<td >date de demande </td>
+				   </tr>
+				   {% for u in cong %}
+  					<tr>
+  						<td >{{ u.nbrjour}}</td>
+  						<td>{{ u.datedebutconge }}</td>
+  						<td >{{ u.datedemande }}</td>
+				   </tr>
+				   {% endfor %}
+	                </table>	
+       		</div>
+      </div>
+      <div class="col-sm-6 col-md-6">
+	      <div class="table-responsive">
+                      <table class="table table-striped">
+				<tr>
+  					<td >Type Document </td>
+  					<td >date de demande </td>
+				</tr>
+				{% for u in doc %}
+					<tr>
+  						<td>{{ u.typedocument_id }}</td>
+  						<td >{{ u.datedemande }}</td>
+					</tr>
+		                {% endfor %}
+	              </table>
+             </div>
+     </div>
+</div>
+{% endblock %}

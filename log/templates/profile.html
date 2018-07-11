@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+<link href="{% static 'css/profile.css' %}" rel="stylesheet">
+
+      <div class="col-sm-6 col-md-8 " id ="MyStyle" >
+		<h4>Matricule:<span class="info">{{pro.matricule}}</span></h4>
+		<h4>CIN:<span class="info">{{pro.cin}}</span></h4>
+		<h4>Nom:<span class="info">{{lastname}}</span></h4>
+		<h4>Prénom:<span class="info">{{firstname}}</span></h4>
+		<h4>Age:<span class="info">{{pro.age}}</span> </h4>
+		<h4>Situation:<span class="info">{{sit.situation}}</span> </h4>
+		<h4>Nombre d'enfant:<span class="info">{{pro.enfant}}</span></h4>
+		<h4>Date d'embauche:<span class="info"> {{pro.date_embauche}} </h4>
+	    <h4>Type contrat:<span class="info">{{con.typecontrat}}</span> </h4>
+		<h4>Role:<span class="info">{{ro.role}}</span> </h4> 
+    {% if envoi %}
+              <h4>Pole:<span class="info">{{po.typepole}}</span> </h4>
+    {% endif %}
+      </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+.info{
+	font-size: 25px;
+	color:black;
+	font-size: 22px;
+	font-weight: normal;
+
+}
+h4{
+	font-size: 25px;
+	font-family: "Comic Sans MS" ;
+	font-style: italic;
+	font-weight: bold;
+	color:teal;
+	
+
+}
+
+#MyStyle{
+	text-align: justify;
+	background-color: silver;
+	opacity: 0.8;
+	border: 3px black inset;
+	border-radius: 25px;
+	margin-top:60px;
+	margin-left: 200px;
+	padding-left:18px;
+    padding-bottom: 1px;
+    padding-left: 100px;
+}
